@@ -22,3 +22,5 @@ user.prototype.getFullName = function() {
 const car = new user('GENESIS', 'G90');
 
 console.log(car.getFullName());
+
+// https://toproot.tistory.com/39?category=493674
