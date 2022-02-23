@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Q1_lime</title>
+
+    <script type="text/javascript">
+        //변수, 연산, 함수[덧셈, 뺄셈, 곱셈, 나누기]를 처리하는 함수 (인자는 2개)
+        //4개를 선언하여 결과를 Alert으로 출력 (1번 입력, 2번 입력, 결과 도출 버튼 필요)
+        
+        var total=0;
+
+        function resultNum() {
+            var sign = document.querySelector("input[name='choiceOne']:checked").value;
+            var num1 = Number(document.getElementById("firstPut").value);
+            var num2 = Number(document.getElementById("seconPut").value);
+
+            if(isNaN(num1) || isNaN(num2)) {
+                alert("숫자만 입력해주세요.");
+                return false;
+            }
+
+            switch (sign) {
+                case 'plus' :
+                    plus(num1, num2);
+                    break;
+                case 'minus' :
+                    minus(num1, num2);
+                    break;
+                case 'devide' :
+                    devide(num1, num2);
+                    break;   
+                case 'multiply' :
+                    multiply(num1, num2);
+                    break;     
+                default :
+                    break;
+            }
+        }
+
+        function plus(a, b) {
+            total = a + b;
+            return alert(a + " + " +  b + " = " + total);
+        }
+
+        function minus(a, b) {
+            total = a - b;
+            return alert(a + " - " +  b + " = " + total);
+        }
+
+        function devide(a, b) {
+            total = a / b;
+            return alert(a + " / " +  b + " = " + total);
+        }
+
+        function multiply(a, b) {
+            total = a * b;
+            return alert(a + " * " +  b + " = " + total);
+        }
+        
+    </script>
+</head>
+<body>
+    
+<h1>hello, Lime's</h1>
+    
+<form name="form" method="post" onsubmit="return resultNum()">
+    <input type="radio" name="choiceOne" id="plus" value="plus"> + &nbsp;&nbsp;
+    <input type="radio" name="choiceOne" id="minus" value="minus"> - &nbsp;&nbsp;
+    <input type="radio" name="choiceOne" id="devide" value="devide"> / &nbsp;&nbsp;
+    <input type="radio" name="choiceOne" id="multiply" value="multiply"> * &nbsp;&nbsp;
+
+    <br>
+
+    1번 입력 : <input type="text" name="firstPut" id="firstPut"><br>
+    2번 입력 : <input type="text" name="seconPut" id="seconPut"><br>
+    <input type="submit" name="result" value="결과확인">
+</form>
+    
+    
+</body>
+</html>
